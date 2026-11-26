@@ -2,16 +2,19 @@
 
 Updated 2026-11-26 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md` on this branch.
 
+## Session
+
+- 2026-11-26 late: a new PM session (source `TauCetiProject/TauCeti`, fork attached as
+  `BarinderBanwait/TauCeti-fork` with push access) took over. Barinder confirmed the whole plan
+  in that session. It can push to the fork, open PRs upstream, edit bodies and reply on threads.
+
 ## Blocked on Barinder
 
-1. **Direct access to `TauCetiProject/TauCeti` needs a new session and a renamed fork.** A
-   session checks out each attached repository at a directory named after it, so
-   `BarinderBanwait/TauCeti` and `TauCetiProject/TauCeti` cannot be attached together. Fix:
-   rename the fork (for example to `TauCeti-fork`; #46351 survives a rename), then start a new
-   session from `TauCetiProject/TauCeti` on the `TauCeti` environment and attach the renamed
-   fork. Until then this session can push to the fork only: no PR creation, body edits or
-   thread replies upstream.
-2. Environment `TauCeti` (personal) allows `release.lean-lang.org`, `releases.lean-lang.org`,
+- Nothing.
+
+## Environment
+
+- Environment `TauCeti` (personal) allows `release.lean-lang.org`, `releases.lean-lang.org`,
    `cache.mathlib.org`, `cache.taucetiproject.org`. `env-setup.sh` on this branch is the setup
    script proposed for it (elan, Mathlib cache, Tau Ceti cache mappings).
 
