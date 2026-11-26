@@ -80,6 +80,17 @@ the target survey.
   https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/pow-minor?expand=1
 - PR creation from this session returned 403 like the other upstream writes.
 
+### To open: §9.1(b) core, stabiliser weights on orbits
+
+- Fork branch `grh/stabilizer-weight`, head `a4317e42` on main `557dcf0f`. One new file,
+  `TauCeti/GroupTheory/GroupAction/Orbit/StabilizerWeight.lean` (121 lines). Reviewed by the
+  PM; the PM added the grh-lean URL and licence to the Provenance paragraph.
+- Title: `feat: stabiliser weights on the orbits of a finite group`
+- Body: `bodies/stabilizer-weight.md`. `gh pr create --repo TauCetiProject/TauCeti --base main
+  --head BarinderBanwait:grh/stabilizer-weight --title "<title>" --body-file
+  bodies/stabilizer-weight.md`, or
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/stabilizer-weight?expand=1
+
 ## Workers
 
 Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:50 UTC against open PRs
@@ -93,4 +104,4 @@ fork; since upstream writes are refused, each gets a compare URL and a ready PR 
 | 2 | §4.1 prerequisite: power minors; small factor of the charpoly | done, branch pushed (see PRs) |
 | 5 | §2.4(a): approximating monoids from uniform closures | running (started 00:00 UTC) |
 | 3 | §5.6(d): root quotients at a unitary matrix | running |
-| 4 | §9.1(b) core: orbit weights summing to `c` | running |
+| 4 | §9.1(b) core: orbit weights summing to `c` | done, branch pushed (see PRs) |
