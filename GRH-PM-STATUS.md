@@ -70,5 +70,14 @@ the target survey.
 
 ## Workers
 
-- Target survey of `GaloisRepresentationsOfUnitaryEigenforms` running (unclaimed sections not
-  on main or in open PRs). ShortGRH has about 144 open PRs, so most sections are taken.
+Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:50 UTC against open PRs
+(search by names and topics), tauceti-claims (`author/ShortGRH/*`) and main `557dcf0f`: free.
+Four workers started 23:50 UTC on main `557dcf0f`, roadmap `9897854`. Their branches go to the
+fork; since upstream writes are refused, each gets a compare URL and a ready PR body here.
+
+| Worker | Target | State |
+|---|---|---|
+| 1 | §3.2 prerequisite: free integers; lacunary and rapidly decreasing sequences are free | running |
+| 2 | §4.1 prerequisite: power minors; small factor of the charpoly | running |
+| 3 | §5.6(d): root quotients at a unitary matrix | running |
+| 4 | §9.1(b) core: orbit weights summing to `c` | running |
