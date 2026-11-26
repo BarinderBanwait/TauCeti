@@ -91,6 +91,16 @@ the target survey.
   bodies/stabilizer-weight.md`, or
   https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/stabilizer-weight?expand=1
 
+### To open: §3.2 prerequisite, free integers
+
+- Fork branch `grh/free-integers`, head `4e220b68` on main `557dcf0f`. One new file,
+  `TauCeti/Combinatorics/Additive/FreeIntegers.lean` (204 lines). Reviewed by the PM.
+- Title: `feat: free families of integers and lacunary sufficient conditions`
+- Body: `bodies/free-integers.md`. `gh pr create --repo TauCetiProject/TauCeti --base main
+  --head BarinderBanwait:grh/free-integers --title "<title>" --body-file
+  bodies/free-integers.md`, or
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/free-integers?expand=1
+
 ## Workers
 
 Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:50 UTC against open PRs
@@ -100,7 +110,7 @@ fork; since upstream writes are refused, each gets a compare URL and a ready PR 
 
 | Worker | Target | State |
 |---|---|---|
-| 1 | §3.2 prerequisite: free integers; lacunary and rapidly decreasing sequences are free | running |
+| 1 | §3.2 prerequisite: free integers; lacunary and rapidly decreasing sequences are free | done, branch pushed (see PRs) |
 | 2 | §4.1 prerequisite: power minors; small factor of the charpoly | done, branch pushed (see PRs) |
 | 5 | §2.4(a): approximating monoids from uniform closures | running (started 00:00 UTC) |
 | 6 | §2.1(e): cancelling two disjoint families of characters | running (started 00:05 UTC) |
