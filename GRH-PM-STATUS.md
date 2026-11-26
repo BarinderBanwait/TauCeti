@@ -17,6 +17,11 @@ Updated 2026-11-26 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md` on th
 
 ## Handoff for a new session
 
+Handed off 2026-11-26 to cloud session "Tau Ceti GRH PM (Barinder)", which has
+`TauCetiProject/TauCeti` as its source and attaches the fork, now `BarinderBanwait/TauCeti-fork`.
+That session owns #46351 and all new PRs from here; the first session stops after forwarding
+the target survey.
+
 - Build recipe: install elan; `lake exe cache get`; write the `tauceti-public` Lake config (see
   `env-setup.sh`); `LAKE_CACHE_DIR=$PWD/.lake/cache LAKE_CONFIG=<cfg> lake cache get --service
   tauceti-public --repo TauCetiProject/TauCeti --mappings-only`; then
@@ -35,11 +40,12 @@ Updated 2026-11-26 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md` on th
   approved. Open findings: api-design (`@[simp]` on `mul_single_one_mul_apply`), attribution and
   documentation (module doc credited the roadmap), proof-quality (move `[IsDomain L]` to
   `[IsDomain O]`; rewrite chains).
-- Fix commit `73bed405` (backup on fork branch `pm-wip/spanning-conj-scalar-integral`):
-  `@[simp]` added; roadmap sentence removed; `[IsDomain L]` replaced by `[IsDomain O]` in both
-  scalar-factorization theorems, the proof cancelling only the ideal generator `d` in `O`; proof
-  at 50 lines. Module builds; axioms are the standard three. Downstream build of 92 modules
-  running; pushed to the PR branch only after it passes.
+- Fix commit `73bed405`, pushed to the PR branch 2026-11-26: `@[simp]` added; roadmap sentence
+  removed; `[IsDomain L]` replaced by `[IsDomain O]` in both scalar-factorization theorems, the
+  proof cancelling only the ideal generator `d` in `O`; proof at 50 lines. Verified: build of
+  the two modules and all 92 downstream importers (`--iofail`, green); axioms are the standard
+  three; Mathlib `#lint` on both modules (15 linters incl. simpNF) passes. `lake lint` could not
+  run here (shallow clone: the scope check needs history).
 - New PR body: `PR-46351-body.md` on this branch (Summary, Q3 and Q5 updated).
 - Thread replies to post:
   - api-design (both threads): Added `@[simp]` to `mul_single_one_mul_apply` in `73bed405`.
