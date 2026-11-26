@@ -101,6 +101,17 @@ the target survey.
   bodies/free-integers.md`, or
   https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/free-integers?expand=1
 
+### To open: §5.6(d), root quotients
+
+- Fork branch `grh/root-quotient`, head `22600a1b` on main `557dcf0f`. One new file,
+  `TauCeti/Algebra/Star/RootQuotient.lean` (202 lines), stated for star algebras. Reviewed by
+  the PM; the PM added the grh-lean URL and licence to the Provenance paragraph.
+- Title: `feat: root quotients of polynomials at elements of a star algebra`
+- Body: `bodies/root-quotient.md`. `gh pr create --repo TauCetiProject/TauCeti --base main
+  --head BarinderBanwait:grh/root-quotient --title "<title>" --body-file
+  bodies/root-quotient.md`, or
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/root-quotient?expand=1
+
 ## Workers
 
 Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:50 UTC against open PRs
@@ -115,5 +126,5 @@ fork; since upstream writes are refused, each gets a compare URL and a ready PR 
 | 5 | §2.4(a): approximating monoids from uniform closures | running (started 00:00 UTC) |
 | 6 | §2.1(e): cancelling two disjoint families of characters | running (started 00:05 UTC) |
 | 7 | §2.1(d): twist of a semisimple representation is semisimple (survey backup) | running (started 00:15 UTC) |
-| 3 | §5.6(d): root quotients at a unitary matrix | running |
+| 3 | §5.6(d): root quotients at a unitary matrix | done, branch pushed (see PRs) |
 | 4 | §9.1(b) core: orbit weights summing to `c` | done, branch pushed (see PRs) |
