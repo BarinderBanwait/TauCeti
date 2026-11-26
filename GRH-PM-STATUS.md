@@ -10,6 +10,12 @@ Updated 2026-11-26 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md` on th
 
 ## Blocked on Barinder
 
+Why PRs cannot be opened here: #46351 was opened at 14:27 UTC, before either PM session, with
+a different credential (likely `gh` logged in as you on your machine). Cloud sessions act
+through the Claude GitHub App installation on `TauCetiProject`, which allows reads and pushes
+to the fork but not PR writes. Fixes: run the commands below from your machine; or run the PM
+in a session on your machine; or have a `TauCetiProject` owner grant the app PR write.
+
 1. **Upstream writes are refused.** From this session, every write to
    `TauCetiProject/TauCeti` through the GitHub integration returns
    `403 Resource not accessible by integration`: PR body edits, review-thread replies, and so
@@ -115,6 +121,27 @@ the target survey.
   bodies/root-quotient.md`, or
   https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/root-quotient?expand=1
 
+### To open: §2.1(d), twists of semisimple representations
+
+- Fork branch `grh/twist-semisimple`, head `48d3af6f` on main `557dcf0f`. One new file,
+  `TauCeti/RepresentationTheory/Character/Twist/Semisimple.lean` (85 lines). Reviewed by the PM.
+- Title: `feat: twists of semisimple representations by linear characters are semisimple`
+- Body: `bodies/twist-semisimple.md`. `gh pr create --repo TauCetiProject/TauCeti --base main
+  --head BarinderBanwait:grh/twist-semisimple --title "<title>" --body-file
+  bodies/twist-semisimple.md`, or
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/twist-semisimple?expand=1
+
+### To open: §2.4(a), approximating monoids
+
+- Fork branch `grh/approximating-monoid`, head `dbb674eb` on main `557dcf0f`. One new file,
+  `TauCeti/Topology/Algebra/UniformConvergence/ApproximatingMonoid.lean` (167 lines). Reviewed
+  by the PM; the PM added the grh-lean URL and licence to the Provenance paragraph.
+- Title: `feat: approximating monoids from uniform closures`
+- Body: `bodies/approximating-monoid.md`. `gh pr create --repo TauCetiProject/TauCeti --base
+  main --head BarinderBanwait:grh/approximating-monoid --title "<title>" --body-file
+  bodies/approximating-monoid.md`, or
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/approximating-monoid?expand=1
+
 ## Workers
 
 Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:40 UTC against open PRs
@@ -126,8 +153,8 @@ fork; since upstream writes are refused, each gets a compare URL and a ready PR 
 |---|---|---|
 | 1 | §3.2 prerequisite: free integers; lacunary and rapidly decreasing sequences are free | done, branch pushed (see PRs) |
 | 2 | §4.1 prerequisite: power minors; small factor of the charpoly | done, branch pushed (see PRs) |
-| 5 | §2.4(a): approximating monoids from uniform closures | running (started about 23:45 UTC) |
+| 5 | §2.4(a): approximating monoids from uniform closures | done, branch pushed (see PRs) |
 | 6 | §2.1(e): cancelling two disjoint families of characters | running (started about 23:47 UTC) |
-| 7 | §2.1(d): twist of a semisimple representation is semisimple (survey backup) | running (started about 23:50 UTC) |
+| 7 | §2.1(d): twist of a semisimple representation is semisimple (survey backup) | done, branch pushed (see PRs) |
 | 3 | §5.6(d): root quotients at a unitary matrix | done, branch pushed (see PRs) |
 | 4 | §9.1(b) core: orbit weights summing to `c` | done, branch pushed (see PRs) |
