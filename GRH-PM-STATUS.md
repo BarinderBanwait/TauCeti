@@ -4,29 +4,51 @@ Updated 2026-11-26 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md` on th
 
 ## Blocked on Barinder
 
-1. **This session cannot act on `TauCetiProject/TauCeti` through GitHub.** Attaching it with
-   push access was refused, so the session can read it (git fetch, public search) but cannot
-   open PRs, edit PR bodies, or reply on review threads there. It can push to the fork
-   `BarinderBanwait/TauCeti`, which updates #46351's head. So:
-   - #46351 fixes are pushed to its branch; the new PR body and the thread replies are below,
-     ready to paste.
-   - New PRs are pushed as fork branches; each has a compare link and a ready body below.
-   To lift this, allow the session to attach `TauCetiProject/TauCeti` with push access (or open
-   a new session with that repository attached and the GitHub app authorized for it).
-2. A personal cloud environment `TauCeti` was created for this work. It allows only
-   `release.lean-lang.org`, `releases.lean-lang.org`, `cache.mathlib.org` and
-   `cache.taucetiproject.org` (Lean toolchain and the two build caches).
+1. **Direct access to `TauCetiProject/TauCeti` needs a new session and a renamed fork.** A
+   session checks out each attached repository at a directory named after it, so
+   `BarinderBanwait/TauCeti` and `TauCetiProject/TauCeti` cannot be attached together. Fix:
+   rename the fork (for example to `TauCeti-fork`; #46351 survives a rename), then start a new
+   session from `TauCetiProject/TauCeti` on the `TauCeti` environment and attach the renamed
+   fork. Until then this session can push to the fork only: no PR creation, body edits or
+   thread replies upstream.
+2. Environment `TauCeti` (personal) allows `release.lean-lang.org`, `releases.lean-lang.org`,
+   `cache.mathlib.org`, `cache.taucetiproject.org`. `env-setup.sh` on this branch is the setup
+   script proposed for it (elan, Mathlib cache, Tau Ceti cache mappings).
+
+## Handoff for a new session
+
+- Build recipe: install elan; `lake exe cache get`; write the `tauceti-public` Lake config (see
+  `env-setup.sh`); `LAKE_CACHE_DIR=$PWD/.lake/cache LAKE_CONFIG=<cfg> lake cache get --service
+  tauceti-public --repo TauCetiProject/TauCeti --mappings-only`; then
+  `LAKE_CONFIG=<cfg> LAKE_CACHE_DIR=$PWD/.lake/cache lake build --iofail <Module>` fetches the
+  rest. A module build takes seconds; 92 downstream modules took about 40 minutes on 4 cores.
+- PR conversation pages can be read with a web-fetch agent on
+  `https://github.com/TauCetiProject/TauCeti/pull/<n>`; PR search works with
+  `gh api -X GET search/issues -f q='repo:TauCetiProject/TauCeti is:pr ...'`.
 
 ## PRs
 
 ### #46351 — §2.2(c), scalar times integral matrix
 
 - Branch `grh/spanning-conj-scalar-integral`. Head before this session `db4e5d36`.
-- State: open, `awaiting-author`. Round on `db4e5d3`: correctness, reuse, scope, generality,
-  placement, naming, quality-pass approved; open findings: api-design (`@[simp]` on
-  `mul_single_one_mul_apply`), attribution and documentation (module doc credited the
-  roadmap), proof-quality (move `[IsDomain L]` to `[IsDomain O]`; rewrite chains).
-- In progress: fixes for all four, building downstream modules.
+- Round on `db4e5d3`: correctness, reuse, scope, generality, placement, naming, quality-pass
+  approved. Open findings: api-design (`@[simp]` on `mul_single_one_mul_apply`), attribution and
+  documentation (module doc credited the roadmap), proof-quality (move `[IsDomain L]` to
+  `[IsDomain O]`; rewrite chains).
+- Fix commit `73bed405` (backup on fork branch `pm-wip/spanning-conj-scalar-integral`):
+  `@[simp]` added; roadmap sentence removed; `[IsDomain L]` replaced by `[IsDomain O]` in both
+  scalar-factorization theorems, the proof cancelling only the ideal generator `d` in `O`; proof
+  at 50 lines. Module builds; axioms are the standard three. Downstream build of 92 modules
+  running; pushed to the PR branch only after it passes.
+- New PR body: `PR-46351-body.md` on this branch (Summary, Q3 and Q5 updated).
+- Thread replies to post:
+  - api-design (both threads): Added `@[simp]` to `mul_single_one_mul_apply` in `73bed405`.
+  - attribution and documentation: Removed the sentence crediting the roadmap; the module doc
+    now states the ideal-generator argument directly. `73bed405`.
+  - proof-quality (IsDomain): Both theorems now take `[IsDomain O]` in place of `[IsDomain L]`;
+    the only cancellation is of the generator `d ≠ 0` in `O`. `73bed405`.
+  - proof-quality (rewrite chains, `show`): these were on `57e4e7f` and were answered by
+    `9002501`; the current proof has no `show` and uses `simp` for entry normalization.
 
 ## Workers
 
