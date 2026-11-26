@@ -68,6 +68,18 @@ the target survey.
   - proof-quality (rewrite chains, `show`): these were on `57e4e7f` and were answered by
     `9002501`; the current proof has no `show` and uses `simp` for entry normalization.
 
+### To open: §4.1 prerequisite, power minors and a small charpoly factor
+
+- Fork branch `grh/pow-minor`, head `e9ec5a89` on main `557dcf0f`. One new file,
+  `TauCeti/LinearAlgebra/Matrix/Charpoly/PowMinor.lean` (132 lines). Reviewed by the PM.
+- Title: `feat: linear dependence of matrix powers via minors, and small factors of the
+  characteristic polynomial`
+- Body: `bodies/pow-minor.md` on this branch. Open with
+  `gh pr create --repo TauCetiProject/TauCeti --base main --head BarinderBanwait:grh/pow-minor
+  --title "<title>" --body-file bodies/pow-minor.md`, or via
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/pow-minor?expand=1
+- PR creation from this session returned 403 like the other upstream writes.
+
 ## Workers
 
 Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:50 UTC against open PRs
@@ -78,6 +90,7 @@ fork; since upstream writes are refused, each gets a compare URL and a ready PR 
 | Worker | Target | State |
 |---|---|---|
 | 1 | §3.2 prerequisite: free integers; lacunary and rapidly decreasing sequences are free | running |
-| 2 | §4.1 prerequisite: power minors; small factor of the charpoly | running |
+| 2 | §4.1 prerequisite: power minors; small factor of the charpoly | done, branch pushed (see PRs) |
+| 5 | §2.4(a): approximating monoids from uniform closures | running (started 00:00 UTC) |
 | 3 | §5.6(d): root quotients at a unitary matrix | running |
 | 4 | §9.1(b) core: orbit weights summing to `c` | running |
