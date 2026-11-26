@@ -114,5 +114,6 @@ fork; since upstream writes are refused, each gets a compare URL and a ready PR 
 | 2 | §4.1 prerequisite: power minors; small factor of the charpoly | done, branch pushed (see PRs) |
 | 5 | §2.4(a): approximating monoids from uniform closures | running (started 00:00 UTC) |
 | 6 | §2.1(e): cancelling two disjoint families of characters | running (started 00:05 UTC) |
+| 7 | §2.1(d): twist of a semisimple representation is semisimple (survey backup) | running (started 00:15 UTC) |
 | 3 | §5.6(d): root quotients at a unitary matrix | running |
 | 4 | §9.1(b) core: orbit weights summing to `c` | done, branch pushed (see PRs) |
