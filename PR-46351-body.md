@@ -17,9 +17,9 @@ Two departures from the roadmap's wording. The hypothesis is that each conjugate
 
 ### Verification
 
-- `lake build --iofail`, with the repository's `leanOptions` (Mathlib standard linter set, warnings as errors), of the two changed modules and of every module that imports either of them, directly or not: the 92 modules downstream of `TauCeti.Data.Matrix.Basis`, which include the two importers of `TauCeti.LinearAlgebra.Matrix.Spanning`. Run on the current head `73911761`.
+- `lake build --iofail`, with the repository's `leanOptions` (Mathlib standard linter set, warnings as errors), of the two changed modules and of every module that imports either of them, directly or not: the 92 modules downstream of `TauCeti.Data.Matrix.Basis`, which include the two importers of `TauCeti.LinearAlgebra.Matrix.Spanning`. Run on the current head `3926713b`.
 - `#print axioms` for the five new declarations: `propext`, `Classical.choice`, `Quot.sound` only.
-- Mathlib's `#lint`, including `simpNF` for the new `@[simp]` lemma, passes on both changed modules at `73911761` (`Spanning.lean`: 8 declarations, 15 linters, no findings).
+- Mathlib's `#lint`, including `simpNF` for the new `@[simp]` lemma, passes on both changed modules at `3926713b` (`Spanning.lean`: 8 declarations, 15 linters, no findings).
 - `lake test`: the local axiom check passed on the changed modules (0 violations). The module-system audit was not run locally, since it reads the `.olean` of every module of the library.
 - `lake lint`: on `db4e5d3`, the source, shim-expiry, dot-notation (0 new findings) and environment (35 declarations, 14 linters) phases passed. The style phase, the header check and Mathlib's `lint-style`, was run directly on the two changed files and passed. Not rerun on `73bed405` or later commits, whose shallow clone lacked the history the scope check needs; CI runs it.
 - No `sorry`, `set_option` or double quotes in comments; every line has at most 100 characters.
