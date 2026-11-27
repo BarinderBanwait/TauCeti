@@ -40,6 +40,12 @@ the target survey.
 
 ### #46351 — §2.2(c), scalar times integral matrix
 
+- 12:45 UTC: on `3926713` the newest scoreboard (roed-math) had all 11 rubrics green; the
+  merge conflict was the only blocker. Merge commit `c7ac1070` awaits CI and re-review. One
+  generality thread (4717406213, suggests rectangular matrices and a scalar `c` in
+  `mul_single_one_mul_apply`) is unreplied but its rubric is green on the newer board; left as is.
+- #47165–#47171: opened 11:05, first CI build still running at 12:45; no reviews yet.
+
 - 11:10 UTC: merge conflict with main in `TauCeti/Data/Matrix/Basis.lean` (module docstring).
   Resolved by merging `origin/main` (`a9994620`) into the branch, no force-push; Basis and
   Spanning build and lint clean; all 125 downstream modules built green. Pushed merge commit
