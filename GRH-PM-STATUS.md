@@ -10,6 +10,11 @@ Updated 2026-11-26 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md` on th
 
 ## Blocked on Barinder
 
+**One command does everything below:** from a checkout of this branch, with `gh` logged in as
+you, run `bash open-all.sh`. It replaces the #46351 body, posts its seven thread replies, and
+opens the seven PRs. (Check #46351's latest reviews first: if they changed, the replies may be
+out of date.)
+
 Why PRs cannot be opened here: #46351 was opened at 14:27 UTC, before either PM session, with
 a different credential (likely `gh` logged in as you on your machine). Cloud sessions act
 through the Claude GitHub App installation on `TauCetiProject`, which allows reads and pushes
@@ -164,7 +169,7 @@ Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:40 UTC again
 Four workers started about 23:42 UTC on main `557dcf0f`, roadmap `9897854`. Their branches go to the
 fork; since upstream writes are refused, each gets a compare URL and a ready PR body here.
 
-All workers finished by 00:10 UTC. No new workers: seven branches await opening, above the
+All workers finished by 00:00 UTC. No new workers: seven branches await opening, above the
 brief's limit of about four PRs in review.
 
 | Worker | Target | State |
