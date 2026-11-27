@@ -142,6 +142,21 @@ the target survey.
   bodies/approximating-monoid.md`, or
   https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/approximating-monoid?expand=1
 
+### To open: §2.1(e), cancelling disjoint families of characters
+
+- Fork branch `grh/character-cancellation`, head `19a3131c` on main `557dcf0f`. One new file,
+  `TauCeti/RepresentationTheory/Semisimple/CharacterCancellation.lean` (220 lines). Reviewed by
+  the PM; the PM added the grh-lean URL and licence. Likely review point: placement of the two
+  general lemmas `char_pi` and `exists_fdRep_isSemisimpleRepresentation_character_eq`.
+- Title: `feat: cancel two disjoint families of characters from semisimple representations`
+- Body: `bodies/character-cancellation.md`. `gh pr create --repo TauCetiProject/TauCeti --base
+  main --head BarinderBanwait:grh/character-cancellation --title "<title>" --body-file
+  bodies/character-cancellation.md`, or
+  https://github.com/TauCetiProject/TauCeti/compare/main...BarinderBanwait:TauCeti-fork:grh/character-cancellation?expand=1
+
+Note: #46351, `grh/character-cancellation` and `grh/twist-semisimple` all touch §2.1/§2.2 but
+different files; none depends on another, so opening them together is not stacking.
+
 ## Workers
 
 Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:40 UTC against open PRs
@@ -149,12 +164,15 @@ Survey: `GRH-target-survey.md`. Picks 1–4 rechecked 2026-11-26 23:40 UTC again
 Four workers started about 23:42 UTC on main `557dcf0f`, roadmap `9897854`. Their branches go to the
 fork; since upstream writes are refused, each gets a compare URL and a ready PR body here.
 
+All workers finished by 00:10 UTC. No new workers: seven branches await opening, above the
+brief's limit of about four PRs in review.
+
 | Worker | Target | State |
 |---|---|---|
 | 1 | §3.2 prerequisite: free integers; lacunary and rapidly decreasing sequences are free | done, branch pushed (see PRs) |
 | 2 | §4.1 prerequisite: power minors; small factor of the charpoly | done, branch pushed (see PRs) |
 | 5 | §2.4(a): approximating monoids from uniform closures | done, branch pushed (see PRs) |
-| 6 | §2.1(e): cancelling two disjoint families of characters | running (started about 23:47 UTC) |
+| 6 | §2.1(e): cancelling two disjoint families of characters | done, branch pushed (see PRs) |
 | 7 | §2.1(d): twist of a semisimple representation is semisimple (survey backup) | done, branch pushed (see PRs) |
 | 3 | §5.6(d): root quotients at a unitary matrix | done, branch pushed (see PRs) |
 | 4 | §9.1(b) core: orbit weights summing to `c` | done, branch pushed (see PRs) |
