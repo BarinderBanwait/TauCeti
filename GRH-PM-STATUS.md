@@ -42,7 +42,9 @@ the target survey.
 
 - 11:10 UTC: merge conflict with main in `TauCeti/Data/Matrix/Basis.lean` (module docstring).
   Resolved by merging `origin/main` (`a9994620`) into the branch, no force-push; Basis and
-  Spanning build and lint clean; 125 downstream modules building before the push.
+  Spanning build and lint clean; all 125 downstream modules built green. Pushed merge commit
+  `c7ac1070`. The body's Verification still names `3926713b` and 92 modules; minor, update on
+  the next body edit.
 
 
 - Branch `grh/spanning-conj-scalar-integral`. Head before this session `db4e5d36`.
