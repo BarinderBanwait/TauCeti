@@ -10,26 +10,9 @@ Updated 2026-11-27 03:05 (UTC) by the PM cloud session. Brief: `GRH-PM-BRIEF.md`
 
 ## Blocked on Barinder
 
-**One command does everything below:** from a checkout of this branch, with `gh` logged in as
-you, run `bash open-all.sh`. It replaces the #46351 body, posts its nine thread replies, and
-opens the seven PRs. (Check #46351's latest reviews first: if they changed, the replies may be
-out of date.)
-
-Why PRs cannot be opened here: #46351 was opened at 14:27 UTC, before either PM session, with
-a different credential (likely `gh` logged in as you on your machine). Cloud sessions act
-through the Claude GitHub App installation on `TauCetiProject`, which allows reads and pushes
-to the fork but not PR writes. Fixes: run the commands below from your machine; or run the PM
-in a session on your machine; or have a `TauCetiProject` owner grant the app PR write.
-
-1. **Upstream writes are refused.** From this session, every write to
-   `TauCetiProject/TauCeti` through the GitHub integration returns
-   `403 Resource not accessible by integration`: PR body edits, review-thread replies, and so
-   presumably PR creation. Pushing to the fork works. The Claude GitHub App on
-   `TauCetiProject` evidently lacks pull-request write for your account; only an owner of the
-   `TauCetiProject` organization can change that. Until then, paste the items below.
-2. **#46351, to paste:** replace the PR body with `PR-46351-body.md` on this branch
-   (`gh pr edit 46351 --repo TauCetiProject/TauCeti --body-file PR-46351-body.md`), and post the
-   thread replies listed under #46351 below.
+- Nothing right now. `open-all.sh` was run 2026-11-27 morning: #46351 body updated, seven PRs
+  opened (#47165–#47171). Upstream writes from cloud sessions still return 403 (Zulip request
+  to Chris pending), so new thread replies and body edits will again be collected here.
 
 ## Environment
 
@@ -56,6 +39,11 @@ the target survey.
 ## PRs
 
 ### #46351 — §2.2(c), scalar times integral matrix
+
+- 11:10 UTC: merge conflict with main in `TauCeti/Data/Matrix/Basis.lean` (module docstring).
+  Resolved by merging `origin/main` (`a9994620`) into the branch, no force-push; Basis and
+  Spanning build and lint clean; 125 downstream modules building before the push.
+
 
 - Branch `grh/spanning-conj-scalar-integral`. Head before this session `db4e5d36`.
 - Round on `db4e5d3`: correctness, reuse, scope, generality, placement, naming, quality-pass
@@ -103,7 +91,7 @@ the target survey.
 
 ### To open: §4.1 prerequisite, power minors and a small charpoly factor
 
-- Fork branch `grh/pow-minor`, head `e9ec5a89` on main `557dcf0f`. One new file,
+- **PR #47165.** Fork branch `grh/pow-minor`, head `e9ec5a89` on main `557dcf0f`. One new file,
   `TauCeti/LinearAlgebra/Matrix/Charpoly/PowMinor.lean` (132 lines). Reviewed by the PM.
 - Title: `feat: linear dependence of matrix powers via minors, and small factors of the
   characteristic polynomial`
@@ -115,7 +103,7 @@ the target survey.
 
 ### To open: §9.1(b) core, stabiliser weights on orbits
 
-- Fork branch `grh/stabilizer-weight`, head `a4317e42` on main `557dcf0f`. One new file,
+- **PR #47166.** Fork branch `grh/stabilizer-weight`, head `a4317e42` on main `557dcf0f`. One new file,
   `TauCeti/GroupTheory/GroupAction/Orbit/StabilizerWeight.lean` (121 lines). Reviewed by the
   PM; the PM added the grh-lean URL and licence to the Provenance paragraph.
 - Title: `feat: stabiliser weights on the orbits of a finite group`
@@ -126,7 +114,7 @@ the target survey.
 
 ### To open: §3.2 prerequisite, free integers
 
-- Fork branch `grh/free-integers`, head `4e220b68` on main `557dcf0f`. One new file,
+- **PR #47167.** Fork branch `grh/free-integers`, head `4e220b68` on main `557dcf0f`. One new file,
   `TauCeti/Combinatorics/Additive/FreeIntegers.lean` (204 lines). Reviewed by the PM.
 - Title: `feat: free families of integers and lacunary sufficient conditions`
 - Body: `bodies/free-integers.md`. `gh pr create --repo TauCetiProject/TauCeti --base main
@@ -136,7 +124,7 @@ the target survey.
 
 ### To open: §5.6(d), root quotients
 
-- Fork branch `grh/root-quotient`, head `22600a1b` on main `557dcf0f`. One new file,
+- **PR #47168.** Fork branch `grh/root-quotient`, head `22600a1b` on main `557dcf0f`. One new file,
   `TauCeti/Algebra/Star/RootQuotient.lean` (202 lines), stated for star algebras. Reviewed by
   the PM; the PM added the grh-lean URL and licence to the Provenance paragraph.
 - Title: `feat: root quotients of polynomials at elements of a star algebra`
@@ -147,7 +135,7 @@ the target survey.
 
 ### To open: §2.1(d), twists of semisimple representations
 
-- Fork branch `grh/twist-semisimple`, head `48d3af6f` on main `557dcf0f`. One new file,
+- **PR #47169.** Fork branch `grh/twist-semisimple`, head `48d3af6f` on main `557dcf0f`. One new file,
   `TauCeti/RepresentationTheory/Character/Twist/Semisimple.lean` (85 lines). Reviewed by the PM.
 - Title: `feat: twists of semisimple representations by linear characters are semisimple`
 - Body: `bodies/twist-semisimple.md`. `gh pr create --repo TauCetiProject/TauCeti --base main
@@ -157,7 +145,7 @@ the target survey.
 
 ### To open: §2.4(a), approximating monoids
 
-- Fork branch `grh/approximating-monoid`, head `dbb674eb` on main `557dcf0f`. One new file,
+- **PR #47170.** Fork branch `grh/approximating-monoid`, head `dbb674eb` on main `557dcf0f`. One new file,
   `TauCeti/Topology/Algebra/UniformConvergence/ApproximatingMonoid.lean` (167 lines). Reviewed
   by the PM; the PM added the grh-lean URL and licence to the Provenance paragraph.
 - Title: `feat: approximating monoids from uniform closures`
@@ -168,7 +156,7 @@ the target survey.
 
 ### To open: §2.1(e), cancelling disjoint families of characters
 
-- Fork branch `grh/character-cancellation`, head `19a3131c` on main `557dcf0f`. One new file,
+- **PR #47171.** Fork branch `grh/character-cancellation`, head `19a3131c` on main `557dcf0f`. One new file,
   `TauCeti/RepresentationTheory/Semisimple/CharacterCancellation.lean` (220 lines). Reviewed by
   the PM; the PM added the grh-lean URL and licence. Likely review point: placement of the two
   general lemmas `char_pi` and `exists_fdRep_isSemisimpleRepresentation_character_eq`.
